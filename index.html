@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>New Super Mario Bros | NDS</title>
+  <meta name="description" content="Play Games">
+  <meta name="author" content="Mr. Burrito" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="../css/style.css">
+  <link rel="stylesheet" media="screen" href="../css/slide_show.css">
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/113546769?s=280&v=4" type="image/png">
+  <style>
+    /* Basic styling for the button */
+    .external-link-button {
+      display: block; /* Ensures it acts like a block element */
+      margin-top: 20px;
+      margin-left: 0px; /* Adjust further (e.g., -5px) if needed for negative margin */
+      padding: 10px 20px;
+      /* Smooth, kinda-lite black background */
+      background-color: #333; /* A dark grey, often perceived as a "lighter black" */
+      color: white; /* White text */
+      text-align: center;
+      text-decoration: none; /* Remove underline from link */
+      border: none;
+      border-radius: 20px; /* Adjust this value for desired roundness. */
+      cursor: pointer;
+      font-size: 16px;
+      width: fit-content; /* Adjusts width to content */
+      float: left; /* Pushes the button to the left */
+    }
+    .external-link-button:hover {
+      /* Slightly darker shade for hover effect */
+      background-color: #222;
+    }
+    /* Clearfix to prevent issues with floated elements */
+    .game::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+
+<div class="game">
+
+<div style="width:640px;height:480px;max-width:100%">
+    <div id="game"></div>
+  </div>
+<script type="text/javascript">
+EJS_player = '#game';
+EJS_gameUrl = 'https://archive.org/download/nintendo-ds-rom-new-super-mario-bros/New%20Super%20Mario%20Bros..zip/New%20Super%20Mario%20Bros.%20%28USA%29.nds'; // Url to Game rom
+EJS_core = 'nds';
+  EJS_gameID = 6; // ID in your website, required for netplay.
+EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
+</script>
+<script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+
+</div>
+
+<a href="https://sites.google.com/aspirestudent.org/goyem/home" class="external-link-button" target="_blank" rel="noopener noreferrer">Go to Home</a>
+
+<script src="../js/slide_show.js"></script>
+<script src="../particles.js-master/particles.js"></script>
+<script src="../js/app.js"></script>
+</body>
+</html>
