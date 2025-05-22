@@ -10,58 +10,79 @@
   <link rel="stylesheet" media="screen" href="../css/slide_show.css">
   <link rel="icon" href="https://avatars.githubusercontent.com/u/113546769?s=280&v=4" type="image/png">
   <style>
-    /* Basic styling for the button */
+    /* Ensure body takes full height for centering */
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex; /* Use Flexbox for centering */
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center horizontally */
+      justify-content: center; /* Center vertically if space allows */
+      background-color: black; /* Set a background color for the page */
+      overflow: hidden; /* Hide scrollbars if content overflows during resizing */
+    }
+
+    /* Styles for the game container to ensure it centers and respects max-width */
+    .game {
+        width: 640px; /* Original width of your game embed */
+        max-width: 100%; /* Ensures it scales down on smaller screens */
+        height: 480px; /* Original height of your game embed */
+        margin: 0 auto; /* Centers the game horizontally if its width is less than 100% */
+        display: flex; /* Use flex to ensure content within .game centers */
+        justify-content: center; /* Center game player horizontally */
+        align-items: center; /* Center game player vertically */
+    }
+
+    /* Remove previous float and margin for the button */
     .external-link-button {
       display: block; /* Ensures it acts like a block element */
-      margin-top: 20px;
-      margin-left: 0px; /* Adjust further (e.g., -5px) if needed for negative margin */
+      margin-top: 20px; /* Space above the button */
+      /* Remove margin-left/right auto will center it within its parent */
       padding: 10px 20px;
-      /* Smooth, kinda-lite black background */
-      background-color: #333; /* A dark grey, often perceived as a "lighter black" */
+      background-color: #333; /* Smooth, kinda-lite black */
       color: white; /* White text */
       text-align: center;
-      text-decoration: none; /* Remove underline from link */
+      text-decoration: none;
       border: none;
-      border-radius: 20px; /* Adjust this value for desired roundness. */
+      border-radius: 20px;
       cursor: pointer;
       font-size: 16px;
       width: fit-content; /* Adjusts width to content */
-      float: left; /* Pushes the button to the left */
+      /* float: left; -- REMOVED */
+      /* margin-left: 0px; -- REMOVED */
     }
     .external-link-button:hover {
-      /* Slightly darker shade for hover effect */
       background-color: #222;
     }
-    /* Clearfix to prevent issues with floated elements */
-    .game::after {
+    /* Clearfix is no longer needed with Flexbox for these elements */
+    /* .game::after {
       content: "";
       display: table;
       clear: both;
-    }
+    } */
   </style>
 </head>
 <body>
 
-<div class="game">
-
-<div style="width:640px;height:480px;max-width:100%">
-    <div id="game"></div>
+  <div class="game">
+    <div style="width:640px;height:480px;">
+      <div id="game"></div>
+    </div>
   </div>
-<script type="text/javascript">
-EJS_player = '#game';
-EJS_gameUrl = 'https://archive.org/download/nintendo-ds-rom-new-super-mario-bros/New%20Super%20Mario%20Bros..zip/New%20Super%20Mario%20Bros.%20%28USA%29.nds'; // Url to Game rom
-EJS_core = 'nds';
-  EJS_gameID = 6; // ID in your website, required for netplay.
-EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
-</script>
-<script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
 
-</div>
+  <a href="https://sites.google.com/aspirestudent.org/goyem/home" class="external-link-button" target="_blank" rel="noopener noreferrer">Go to Home</a>
 
-<a href="https://sites.google.com/aspirestudent.org/goyem/home" class="external-link-button" target="_blank" rel="noopener noreferrer">Go to Home</a>
+  <script type="text/javascript">
+    EJS_player = '#game';
+    EJS_gameUrl = 'https://archive.org/download/nintendo-ds-rom-new-super-mario-bros/New%20Super%20Mario%20Bros..zip/New%20Super%20Mario%20Bros.%20%28USA%29.nds'; // Url to Game rom
+    EJS_core = 'nds';
+    EJS_gameID = 6; // ID in your website, required for netplay.
+    EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
+  </script>
+  <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
 
-<script src="../js/slide_show.js"></script>
-<script src="../particles.js-master/particles.js"></script>
-<script src="../js/app.js"></script>
+  <script src="../js/slide_show.js"></script>
+  <script src="../particles.js-master/particles.js"></script>
+  <script src="../js/app.js"></script>
 </body>
 </html>
